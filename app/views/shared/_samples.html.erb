@@ -5,6 +5,8 @@
 <!-- Modal for parsing sample sheets should be empty at first -->
 <div class="modal fade" id="modal-parse-samples" tabindex="-1" role="dialog" aria-labelledby=="modal-parse-samples-label"></div>
 
+<span style="display: none;" data-hook="samples-body-html"></span>
+
 <div id="alert-container"></div>
 
 <% if can_view_samples(@organization) %>
@@ -26,7 +28,8 @@
       <span class="glyphicon glyphicon-plus"></span>
       <span class="hidden-xs"><%= t("samples.add_new_sample") %></span>
     </button>
-    <button type="button" class="btn btn-default" id="importSamplesButton" data-toggle="modal" data-target="#modal-import-samples">
+    <button type="button" class="btn btn-default" id="importSamplesButton"
+        data-toggle="modal" data-target="#modal-import-samples" data-hook="import-samples-external">
       <span class="glyphicon glyphicon-cloud-upload"></span>
       <span class="hidden-xs"><%= t("samples.import") %></span>
       </button>
