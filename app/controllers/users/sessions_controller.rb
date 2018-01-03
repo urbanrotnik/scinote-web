@@ -2,9 +2,11 @@ class Users::SessionsController < Devise::SessionsController
   # before_filter :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
-  # def new
-  #   super
-  # end
+  def new
+    ck_name = ENV['COOKIE_AUTH_COOKIE_NAME']
+    user = cookies[ck_name] ? User.find_by_email(cookies[ck_name]) : nil
+    user.present? ? sign_in_and_redirect(user) : super
+  end
 
   # POST /resource/sign_in
   # def create
