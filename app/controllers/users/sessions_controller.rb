@@ -4,7 +4,7 @@ class Users::SessionsController < Devise::SessionsController
   # GET /resource/sign_in
   def new
     ck_name = ENV['COOKIE_AUTH_COOKIE_NAME']
-    user = cookies[ck_name] ? User.find_by_email(cookies[ck_name]) : nil
+    user = cookies[ck_name] ? User.find_by_email(cookies[ck_name].strip) : nil
     user.present? ? sign_in_and_redirect(user) : super
   end
 
