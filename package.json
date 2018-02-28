@@ -16,6 +16,9 @@
   "files": [
     ".eslintrc.json"
   ],
+  "engines": {
+    "node": "8.9.4"
+  },
   "scripts": {
     "flow": "flow",
     "lint": "eslint ."
