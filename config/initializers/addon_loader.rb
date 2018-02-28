@@ -3,7 +3,7 @@ TARGET_ROOT = "#{Dir.pwd}/app/javascript/src/componentLoader".freeze
 COMPONENTS_ROOT = "#{TARGET_ROOT}/components".freeze
 UBER_CONFIG_PATH = "#{TARGET_ROOT}/availableAddons.js".freeze
 
-begin
+# begin
 ## clear previous build
 FileUtils.rm_f Dir.glob("#{COMPONENTS_ROOT}/*")
 FileUtils.rm_f Dir.glob(UBER_CONFIG_PATH)
@@ -26,7 +26,7 @@ end
 
 ## handles error on the platforms that does not support symlink
 ## http://ruby-doc.org/core-2.2.0/File.html#symlink-method
-rescue
-  puts '[sciNote] Unable to load React components from addons!'
-  puts '[sciNote] Your system does not support symlink!'
-end
+# rescue
+#   puts '[sciNote] Unable to load React components from addons!'
+#   puts '[sciNote] Your system does not support symlink!'
+# end
