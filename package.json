@@ -18,7 +18,8 @@
   ],
   "scripts": {
     "flow": "flow",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "postinstall": "npm rebuild react-hijack"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.1",
