@@ -16,6 +16,9 @@
   "files": [
     ".eslintrc.json"
   ],
+  "engines": {
+    "node": "8.9.4"
+  },
   "scripts": {
     "flow": "flow",
     "lint": "eslint ."
@@ -79,7 +82,6 @@
     "react-data-grid": "^2.0.2",
     "react-document-title": "^2.0.3",
     "react-dom": "15.6.1",
-    "react-hijack": "biosistemika/react-hijack#2.0.1",
     "react-intl": "^2.3.0",
     "react-intl-redux": "^0.6.0",
     "react-moment": "^0.6.4",
