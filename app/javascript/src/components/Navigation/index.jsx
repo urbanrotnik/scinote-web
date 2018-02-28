@@ -17,10 +17,10 @@ import NotificationsDropdown from "./components/NotificationsDropdown";
 import InfoDropdown from "./components/InfoDropdown";
 import UserAccountDropdown from "./components/UserAccountDropdown";
 // Ignore so Heroku builds pass
-//import withExtras from 'react-hijack';
-//import addonsConfig from '../../componentLoader/config';
-//import massageConfiguration from '../../componentLoader/massageConfiguration';
-//import componentLoader from '../../componentLoader';
+import withExtras from 'react-hijack';
+import addonsConfig from '../../componentLoader/config';
+import massageConfiguration from '../../componentLoader/massageConfiguration';
+import componentLoader from '../../componentLoader';
 
 const StyledNavbar = styled(Navbar)`
   background-color: ${WHITE_COLOR};
@@ -154,10 +154,10 @@ Navigation.propTypes = {
 const mapStateToProps = ({ current_team }) => ({ current_team });
 
 // Ignore so Heroku builds pass
-//const NavigationWithExtras = withExtras({
-//  identifier: 'navigation',
-//  config: massageConfiguration(addonsConfig, 'navigation'),
-//}, componentLoader)(Navigation);
-//
-//export default connect(mapStateToProps)(NavigationWithExtras);
-export default connect(mapStateToProps)(Navigation);
+const NavigationWithExtras = withExtras({
+ identifier: 'navigation',
+ config: massageConfiguration(addonsConfig, 'navigation'),
+}, componentLoader)(Navigation);
+
+export default connect(mapStateToProps)(NavigationWithExtras);
+// export default connect(mapStateToProps)(Navigation);
