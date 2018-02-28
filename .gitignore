@@ -58,7 +58,6 @@ node_modules
 coverage
 
 # Added during webpacker install
-/public/packs
 /node_modules
 .DS_Store
 app/javascript/src/componentLoader/components/*
