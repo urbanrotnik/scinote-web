@@ -2,6 +2,8 @@ module ArchivableModel
   extend ActiveSupport::Concern
 
   included do
+    extend BulkActions
+
     validates :archived, inclusion: { in: [true, false] }
     before_save :set_archive_timestamp
     before_save :set_restore_timestamp
@@ -63,6 +65,12 @@ module ArchivableModel
   # Sets the restored_by value to the current user.
   def restore!(current_user)
     restore(current_user) || raise(ActiveRecord::RecordNotSaved)
+  end
+
+  module BulkActions
+    def bulk_archive!(user)
+      all.update_all(archived_by_id: user.id, archived_on: Time.zone.now, archived: true)
+    end
   end
 
   protected
