@@ -133,6 +133,7 @@ var TinyMCE = (function() {
           menubar: 'file edit view insert format table',
           toolbar: 'undo redo restoredraft | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table | link | forecolor backcolor | customimageuploader marvinjsplugin | codesample',
           plugins: plugins,
+          paste_data_images: true,
           autoresize_bottom_margin: 20,
           codesample_languages: [
             { text: 'R', value: 'r' },
