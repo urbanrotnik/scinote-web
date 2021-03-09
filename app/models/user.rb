@@ -607,7 +607,7 @@ class User < ApplicationRecord
     raise StandardError, 'Missing otp_secret' unless otp_secret
 
     totp = ROTP::TOTP.new(otp_secret, issuer: 'sciNote')
-    totp.verify(otp, drift_behind: 10)
+    totp.verify(otp, drift_behind: 60)
   end
 
   def assign_2fa_token!
